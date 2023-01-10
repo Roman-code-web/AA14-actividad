@@ -5,7 +5,7 @@
             <h2 class="text-center fs-4 fw-bold">{{subtitulo}}</h2>
         </div>
         <div class="row d-flex justify-content-center align-items-center ">
-            <div class="col-md-6 col-sm-6 col-xs-12 bg-light div__form">
+            <div class="col-md-6 col-sm-9 col-xs-12 bg-light div__form">
                 <form class="my-3 p-3" >
                     <div class="mb-5">
                         <h3 class="text-center">{{tituloForm}}</h3>
@@ -13,21 +13,21 @@
                     <!---------Nombre---------------------->
                     <div class="mb-3">
                         <div class="form-floating">
-                            <input type="text" class="form-control input__border" id="nombre" name="nombre" placeholder="Nombre"  >
+                            <input type="text" class="form-control input__border" id="nombre" name="nombre" placeholder="Nombre" [(ngModel)]="nombre"  >
                             <label for="nombre" class="form-label label__color">Nombre</label>
                         </div>  
                     </div>
                     <!---------Dni---------------------->
                     <div class="mb-3">
                         <div class="form-floating">
-                            <input type="text" class="form-control input__border" id="dni" name="dni" placeholder="dni"  >
+                            <input type="number" class="form-control input__border" id="dni" name="dni" placeholder="dni" [(ngModel)]="dni" >
                             <label for="dni" class="form-label label__color">Dni</label>
                         </div>  
                     </div>
                     <!------------Estado Civil------------------->
                     <div class="mb-3">
-                        <select class="form-select input__border" aria-label="Default select example">
-                            <option selected>Estado Civil</option>
+                        <select class="form-select input__border" aria-label="Default select example"name="select"  [(ngModel)]="estadocivil">
+                            <option value="" disabled>Estado Civil</option>
                             <option value="Soltero">Soltero</option>
                             <option value="Casado">Casado</option>
                             <option value="Viudo">Viudo</option>
@@ -36,12 +36,20 @@
                     </div>
                     <!------------Componete hijo------------------>
                     <div class="my-3">
-                        <app-hijo></app-hijo>
+                        <app-hijo [listaPersona]="RegistroPersona" ></app-hijo>
                     </div>
                     <!-----------boton-------------------->
-                    <div class="">
-                        <button class="btn bg__btn w-100">Enviar</button>
+                    <div *ngIf="(nombre=='' || dni=='' || estadocivil=='')  else botonHabilitado">
+                        <div class="">
+                            <button disabled class="btn bg__btn w-100" (click)="enviarDatos()" >Enviar</button>
+                        </div>
                     </div>
+                    <ng-template #botonHabilitado>
+                        <div class="" >
+                        <button class="btn bg__btn w-100" (click)="enviarDatos()" >Enviar</button>
+                        </div>
+                    </ng-template>
+                    
                 </form>
             </div>
         </div>

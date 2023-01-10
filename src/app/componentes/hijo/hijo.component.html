@@ -1,1 +1,7 @@
-<p>hijo works!</p>
+<div *ngIf="listaPersona.length>0" >
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+            {{"Registro Exitoso: " + (listaPersona | json )}}     
+        </div>
+    </div>
+</div>
