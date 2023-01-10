@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+titulo="Actividad 15";
+subtitulo="Comunicación entre componentes padre e hijo en Angular";
+tituloForm="Registro de Personas";
 }

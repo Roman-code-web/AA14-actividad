@@ -1,4 +1,49 @@
-<p>home works!</p>
-
-
-<app-hijo></app-hijo>
+<div class="container">
+    <div class="container">
+        <div class="container my-5">
+            <h1 class="text-center mb-3 fw-bold">{{titulo}}</h1>
+            <h2 class="text-center fs-4 fw-bold">{{subtitulo}}</h2>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center ">
+            <div class="col-md-6 col-sm-6 col-xs-12 bg-light div__form">
+                <form class="my-3 p-3" >
+                    <div class="mb-5">
+                        <h3 class="text-center">{{tituloForm}}</h3>
+                    </div>
+                    <!---------Nombre---------------------->
+                    <div class="mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control input__border" id="nombre" name="nombre" placeholder="Nombre"  >
+                            <label for="nombre" class="form-label label__color">Nombre</label>
+                        </div>  
+                    </div>
+                    <!---------Dni---------------------->
+                    <div class="mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control input__border" id="dni" name="dni" placeholder="dni"  >
+                            <label for="dni" class="form-label label__color">Dni</label>
+                        </div>  
+                    </div>
+                    <!------------Estado Civil------------------->
+                    <div class="mb-3">
+                        <select class="form-select input__border" aria-label="Default select example">
+                            <option selected>Estado Civil</option>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo">Viudo</option>
+                            <option value="Divorciado">Divorciado</option>
+                          </select>  
+                    </div>
+                    <!------------Componete hijo------------------>
+                    <div class="my-3">
+                        <app-hijo></app-hijo>
+                    </div>
+                    <!-----------boton-------------------->
+                    <div class="">
+                        <button class="btn bg__btn w-100">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
